@@ -1,0 +1,26 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2> Topic Details</h2>
+      <br>
+      <div *ngIf="topic">
+        <span>Topic Id: </span> {{topic.topicId}}
+        <br>
+        <span>Description: </span> {{topic.description}}
+        <br>
+        <span>Created At: </span> {{topic.createdAt | date}}
+        <br>
+        <span *ngIf="user">Created By: {{user.name}}</span> 
+        <br>
+      </div> 
+    </div>
+
+    <div class="col"></div>
+  </div> 
+ </div>
+<br>
+<br>
+
+<app-comments *ngIf="topic" [topic]="topic"></app-comments>

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from './../userdata.service';
 import { Location } from '@angular/common';
-import {User} from './../user';
+import { User} from './../user';
 
 @Component({
   selector: 'app-userupdate',
@@ -25,7 +25,6 @@ export class UserupdateComponent implements OnInit {
     this.userService.getUserView(id)
     .subscribe(user => {
       this.user = user[0];
-      console.log(this.user);
     });
   }
 

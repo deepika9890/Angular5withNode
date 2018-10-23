@@ -1,0 +1,47 @@
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+<form [formGroup]="loginForm" (ngSubmit) ="submit()">
+<label>
+  Username:
+  <input type="text" formControlName="name" required>
+</label>
+<div *ngIf="loginForm.get('name').invalid && (loginForm.get('name').dirty || loginForm.get('name').touched)" class="alert alert-danger">
+  <div *ngIf="loginForm.get('name').errors.required">
+    Name is required.
+  </div>
+</div>
+<br>
+<label>
+  Password:
+  <input type="text" required minlength="4" [(ngModel)]="login.password" 
+  formControlName="password" required>
+</label>
+<div *ngIf="loginForm.get('password').invalid && (loginForm.get('password').dirty || loginForm.get('password').touched)" class="alert alert-danger">
+  <div *ngIf="loginForm.get('password').errors.required">
+    password is required.
+  </div>
+  <div *ngIf="loginForm.get('password').errors.minlength">
+    Password is atleast 4 characters long.
+  </div>
+</div>
+<br>
+<button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+
+</form>
+
+</div>
+
+<div class="col">
+
+  <p> New user? Register Now!</p>
+  <br>
+  <a routerLink="/registerUser"> <button (click)="registerUser()" type="button" class="btn btn-primary">Register</button></a>
+
+</div>
+</div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <br>
+  <br>
+  <div class="row">
+    <div class="col">
+
+      <table class="table text-sm font-weight-normal">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Product name </th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Units</th>
+            <th scope="col">Photo</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.product}} </td>
+            <td>{{product.price}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.units}}</td>
+            <td>{{product.photo}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <!-- 
+            <td><a routerLink="/userview/{{user.id}}"> <button type="button" class="btn btn-primary">View</button></a></td>
+            <td><a routerLink="/userupdate/{{user.id}}"> <button type="button" class="btn btn-primary">Edit</button></a></td>
+            <td><button type="button" class="btn btn-primary" (click)="confirmation(user.id)">Delete</button></td> -->
+          </tr>
+        </tbody>
+        </table>

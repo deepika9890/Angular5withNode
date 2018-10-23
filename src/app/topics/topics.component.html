@@ -1,0 +1,27 @@
+    <br>
+    <a routerLink="/newTopic"> <button class="btn btn-primary">CREATE NEW TOPIC</button></a>
+    <br>
+    <br>
+    {{title}}
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Username  </th>
+        <th scope="col">Description </th>
+        <th scope="col">Timestamp </th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+      <tr *ngFor="let topic of topics">
+        <td>{{topic.name}}</td>
+        <td>{{topic.description}}</td>
+        <td>{{topic.createdAt | date}}</td>
+        <td><a routerLink="/topicview/{{topic.topicId}}"> <button class="btn btn-primary">VIEW</button></a></td>
+        <td><a routerLink="/topicedit/{{topic.topicId}}"> <button class="btn btn-primary">EDIT</button></a></td>
+        <td><button (click)="confirmation(topic.topicId)"class="btn btn-primary">ARCHIVE</button></td>
+      </tr>
+      </tbody>
+    </table>

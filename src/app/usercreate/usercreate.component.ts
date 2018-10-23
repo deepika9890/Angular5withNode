@@ -24,7 +24,7 @@ export class UsercreateComponent implements OnInit {
   }
 
   save(): void {
-    console.log(this.user);
+    
     //this.userObj.name = this.user.name;
     //this.userObj.address = this.user.address;
     this.userService.createUser(this.user)

@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Comments</h3>
+      <div *ngIf="comments && comments.length > 0">
+        <div class= "mt-1" *ngFor="let comment of comments">
+
+            <div class ="mt-1 input-group" *ngIf="comment.id === editableId">
+               <input class ="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"[(ngModel)]="comment.description">
+               <button (click)="save(comment.id)" class="btn-sm input-group-btn btn btn-primary">Save</button>
+               <button (click)="goBack(comment.id)" class="btn-sm input-group-btn btn btn-primary">Cancel</button>
+            </div>
+
+            <div class ="mt-1 input-group" *ngIf="comment.id != editableId">
+               <span class ="form-control"  aria-label="Small" aria-describedby="inputGroup-sizing-sm">{{comment.description}}</span>
+               <button (click)="editComment(comment.id)" class="input-group-btn btn-sm btn btn-primary">Edit</button>
+               <button (click)="confirmation(comment.id)" class="input-group-btn btn-sm btn btn-primary">Delete</button>
+             </div>
+            </div>
+            <br>
+            <div class="mt-1 input-group" >
+            <input class ="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="comment.description" placeholder="New comment"></div>
+          <button (click)="createComment()" class="input-group-btn btn-sm btn btn-primary">Save</button>
+        </div> 
+      </div>
+
+    <div class="col"></div>
+  </div>
+</div>
+
+
+<div class="input-group">
+  <input type="text" class="form-control">
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button">Go!</button>
+  </span>
+</div>
