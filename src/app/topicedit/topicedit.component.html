@@ -1,0 +1,13 @@
+<div *ngIf="topic && topic.topicId">
+  <h2>Topic Details</h2>
+  <br>
+  <div><span>Topic Id :{{topic.topicId}} </span></div>
+  <div>
+    <label>Description:
+      <input [(ngModel)]="topic.description" placeholder="description" />
+    </label>
+  </div>
+  <button (click)="save()"class="btn btn-primary">Save</button>
+  <button (click)="goBack()" class="btn btn-primary">Back</button>
+</div>
+

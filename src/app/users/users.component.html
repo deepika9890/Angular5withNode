@@ -1,21 +1,41 @@
-<h4>
-  {{title}}
-<h4>
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Address</th>
-  </tr>
-    <tr *ngFor="let user of users">
-      <td>{{user.id}}</td>
-      <td>{{user.name}} </td>
-      <td>{{user.address}}</td>
-      <td><a routerLink="/userview/{{user.id}}"> <button>VIEW</button></a></td>
-      <td><a routerLink="/userupdate/{{user.id}}"> <button>EDIT</button></a></td>
+<div class="container">
+  <br>
+  <br> 
+  <div class="row">
+    <div class="col">
+      <a routerLink="/topics"> <button type="button" class="btn btn-primary">View Topics</button></a>
 
-      <td><button (click)="confirmation(user.id)">DELETE</button></td>
+        <table class="table text-sm font-weight-normal">
+          <thead>
+          <tr>
+            <th scope= "col">Id</th>
+            <th scope= "col">Username</th>
+            <th scope= "col">First name</th>
+            <th scope= "col">Email address</th>
+            <th scope= "col">Photo</th>
+            <th scope= "col"></th>
+            <th scope= "col"></th>
+            <th scope= "col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}} </td>
+            <td>{{user.firstname}}</td>
+            <td>{{user.emailaddress}}</td>
+            <td>{{user.photo}}</td>
+            <td><a routerLink="/userview/{{user.id}}"> <button type="button" class="btn btn-primary">View</button></a></td>
+            <td><a routerLink="/userupdate/{{user.id}}"> <button type="button" class="btn btn-primary">Edit</button></a></td>
+            <td><button type="button" class="btn btn-primary" (click)="confirmation(user.id)">Delete</button></td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+          <div class="col" style="text-align:right">
+            <a routerLink="/newuser"> <button type="button" class="btn btn-primary">Create new user</button></a>
+          </div>
+  </div>
+</div>
 
-      </tr>
-</table>
- 
+

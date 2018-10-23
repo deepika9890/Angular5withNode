@@ -1,7 +1,30 @@
-<div *ngIf="user">
-    <span>Id: </span> {{user.id}}
-    <br>
-    <span>Name: </span> {{user.name}}
-    <br>
-    <span>Address: </span> {{user.address}}
+
+<div class="container">
+    <h4 class="display-5">User Details</h4>
+    <div class="row">
+        <div class="col">
+            <div *ngIf="user">
+                <span><strong>Id: </strong></span> {{user.id}}
+                <br>
+                <span><strong>Username: </strong></span> {{user.name}}
+                <br>
+                <span><strong>First name: </strong></span> {{user.firstname}}
+                <br>
+                <span><strong>Last name: </strong></span> {{user.lastname}}
+                <br>
+                <span><strong>Date of birth: </strong></span> {{user.dob}}
+                <br>
+                <span><strong>Address: </strong></span> {{user.address}}
+                <br>
+                <span><strong>Email address: </strong></span> {{user.emailaddress}}
+                <br>
+                <span><strong>Password: </strong></span> {{user.password}}
+                <br>
+                <span><strong>Photo: </strong></span> {{user.photo}}
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
 </div>
+
+

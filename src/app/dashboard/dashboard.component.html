@@ -1,10 +1,10 @@
 
 <div style="text-align:center">
-  <h1>
-    {{title}}
-  </h1>
+  <h1 class="display-5">{{title}}</h1>
+  <div style="text-align:right">
+  <span *ngIf="user && user.name">Hello {{user.name}}!</span>
+  </div>
 </div> 
 <div>
 
-  <td><a routerLink="/usercreate"> <button>CREATE</button></a></td>
-</div>
+ 

@@ -1,16 +1,56 @@
 <div *ngIf="user && user.id">
-  <h2>{{ user.name | uppercase }} Details</h2>
-  <div><span>id :{{user.id}} </span></div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="user.name" placeholder="name" />
+  <h2>{{ user.name }} Details</h2>
+
+<div><span>Id :{{user.id}} </span></div>
+  
+  <div class="form-group">
+    <label>First Name
+      <input [(ngModel)]="user.firstname" class="rounded" placeholder="" />
     </label>
   </div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="user.address" placeholder="address" />
+  <div class="form-group">
+    <label>Last Name
+      <input [(ngModel)]="user.lastname" class="rounded" placeholder="" />
     </label>
   </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <div class="form-group">
+    <label>Sex 
+      <div class="form-check">
+        <input class="form-check-input" [(ngModel)]="user.sex" type="radio" name="exampleRadios" id="exampleRadios1" value="Female" checked>
+        <label class="form-check-label" for="exampleRadios1">
+          Female
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" [(ngModel)]="user.sex" type="radio" name="exampleRadios" id="exampleRadios2" value="Male">
+        <label class="form-check-label" for="exampleRadios2">
+          Male
+        </label>
+      </div>
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Date of Birth
+      <input [(ngModel)]="user.dob"class="rounded" placeholder="dd/mm/yyyy" />
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Address(city)
+      <input [(ngModel)]="user.address"class="rounded" placeholder="" />
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Email address
+      <input [(ngModel)]="user.emailaddress" class="rounded" placeholder="@gmail.com" />
+    </label>
+  </div>
+  <div class="form-group ">
+    <label>Photo
+      <input [(ngModel)]="user.photo" class="rounded" placeholder="" />
+    </label>
+  </div>
+
+    <button (click)="save()" class="btn btn-primary">Save</button>
+    <button (click)="goBack()" class="btn btn-primary">Back</button>
+
 </div>
